@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <CardsCard v-for="card in cards" :key="card.id" :card="card" />
+    <CardsDisplay v-for="card in cards" :key="card.id" :card="card" />
   </div>
 </template>
 
 <script>
-import CardsCard from "../components/CardsCard";
+import CardsDisplay from "../components/CardsDisplay";
 export default {
-  components: { CardsCard },
+  components: { CardsDisplay },
   data() {
     return {
       cards: [],
@@ -27,5 +27,6 @@ export default {
   display: flex;
   flex-wrap: wrap;
   margin-left: 200px;
+  margin-top: 5px;
 }
 </style>

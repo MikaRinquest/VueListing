@@ -1,14 +1,16 @@
 <template class="view">
   <div class="card">
     <div class="list-item">
-      <img :src="card.Image" />
-      <div class="list-info">
-        <span class="sword">
-          <p>ATK:{{ card.ATK }}</p>
-          <p>DEF:{{ card.DEF }}</p>
-          <p>Rarity: {{ card.Rarity }}</p>
-        </span>
-      </div>
+      <img :src="card.Image" class="img" />
+      <router-link :to="{ name: 'SingleCardView', params: { id: card.id } }">
+        <div class="list-info">
+          <span class="sword">
+            <p>ATK:{{ card.ATK }}</p>
+            <p>DEF:{{ card.DEF }}</p>
+            <p>Rarity: {{ card.Rarity }}</p>
+          </span>
+        </div>
+      </router-link>
     </div>
   </div>
 </template>
@@ -20,19 +22,12 @@ export default {
 </script>
 
 <style>
-/* CSS Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 .view {
   display: flex;
   flex-wrap: wrap;
 }
 /* Image */
-img {
+.img {
   width: 150px;
   height: 250px;
   text-align: none;
